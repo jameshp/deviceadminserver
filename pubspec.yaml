@@ -8,7 +8,5 @@ environment:
   sdk: '>=1.0.0 <2.0.0'
 
 dependencies:
-  args: '>=0.10.0 <0.14.0'
-  shelf: '>=0.6.0 <0.7.0'
-  shelf_route: 'any'
   http_server: 'any'
+  rpc: 'any'

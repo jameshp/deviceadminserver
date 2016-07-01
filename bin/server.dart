@@ -1,72 +1,116 @@
-// Copyright (c) 2016, <your name>. All rights reserved. Use of this source code
-// is governed by a BSD-style license that can be found in the LICENSE file.
-
-import 'dart:io';
 import 'dart:async';
-import 'package:http_server/http_server.dart';
-
-import 'package:args/args.dart';
-import 'package:shelf/shelf.dart' as shelf;
-import 'package:shelf/shelf_io.dart' as io;
-import 'package:shelf_route/shelf_route.dart';
+import 'dart:io';
 import 'dart:convert';
-import 'package:shelf/src/response.dart';
-import 'package:mime/mime.dart';
 
-void main(List<String> args) {
-  var myRouter = router()
-    ..get('/', (_) => new Response.ok("Hello World"),
-        middleware: shelf.logRequests())
-    ..put('/base64toJson/', (request) => B64toJsonHandler(request),
-        middleware: shelf.logRequests());
+import 'package:rpc/rpc.dart';
 
-  printRoutes(myRouter);
+class SimpleMessage {
+  String field1;
+  String field2;
+}
 
-  var parser = new ArgParser()
-    ..addOption('port', abbr: 'p', defaultsTo: '8088');
+class AppConfigMessage {
+  MediaMessage appConfig;
+}
 
-  var result = parser.parse(args);
+class AppConfigResponse{
+  Map<String,String> appConfigJson;
+}
 
-  var port = int.parse(result['port'], onError: (val) {
-    stdout.writeln('Could not parse port value "$val" into a number.');
-    exit(1);
+class MegaMixMessage {
+  String name;
+  int age;
+  MediaMessage resume;
+}
+
+class MultipleFile {
+  List<MediaMessage> files;
+}
+
+class MultipleFile2 {
+  Map<String, MediaMessage> files;
+}
+
+class TestMessage{
+  String bla;
+}
+
+@ApiClass(version: 'v1',
+          name:'appconfigapi')
+class AppConfigAPI {
+  @ApiResource()
+  PostAPI post = new PostAPI();
+}
+
+class PostAPI {
+  @ApiMethod(path: 'test/', method: 'GET')
+  TestMessage getTest(){
+    return new TestMessage()
+                ..bla = "Hello World";
+  }
+
+  @ApiMethod(path: 'post/simple', method: 'POST')
+  SimpleMessage test1(SimpleMessage message) {
+    return message;
+  }
+
+  @ApiMethod(path: 'appconfig', method: 'POST')
+  Future<AppConfigResponse> returnAppConfig(AppConfigMessage message) async{
+    //var appConfig = message.appConfig.toString();
+    String b64_message = UTF8.decode(message.appConfig.bytes);
+    List<int> dat_message = BASE64.decode(b64_message);
+    File datFile = new File("temp.dat");
+    datFile.writeAsBytes(dat_message);
+
+    //print (b64_message);
+    await executeCommand("dat2json.bat",[]);
+
+    File jsonFile = new File('temp.json');
+    String mapAsJson = await jsonFile.readAsString();
+     //app_cfg.py spbt_config CONVERT spbt_config.json -o spbt_config.dat
+      //app_cfg.py event CONVERT c:/temp/new_event.dat -o c:/temp/converted_event.js --in-format dat --out-format json
+
+    Map parsedMap = JSON.decode(mapAsJson);
+    jsonFile.delete();
+    // File datFile = new File('temp.dat');
+    // datFile.delete();
+
+    AppConfigResponse r = new AppConfigResponse();
+    r.appConfigJson = parsedMap;
+    return r;
+  }
+
+  @ApiMethod(path: 'post/mega-mix', method: 'POST')
+  MegaMixMessage test3(MegaMixMessage message) {
+    return message;
+  }
+
+  @ApiMethod(path: 'post/collection/list', method: 'POST')
+  MultipleFile test4(MultipleFile message) {
+    return message;
+  }
+
+  @ApiMethod(path: 'post/collection/map', method: 'POST')
+  MultipleFile2 test5(MultipleFile2 message) {
+    return message;
+  }
+}
+
+Future main() async {
+  ApiServer _apiServer = new ApiServer(apiPrefix: '', prettyPrint: true);
+  _apiServer.enableDiscoveryApi();
+  _apiServer.addApi(new AppConfigAPI());
+
+  final server = await HttpServer.bind(InternetAddress.ANY_IP_V4, 4242);
+  server.listen((HttpRequest request) {
+    _apiServer.httpRequestHandler(request);
   });
-
-  //
-  // var handler = const shelf.Pipeline()
-  //     .addMiddleware(shelf.logRequests())
-  //     .addHandler(_echoRequest);
-
-  io.serve(myRouter.handler, 'localhost', port).then((server) {
-    print('Serving at http://${server.address.host}:${server.port}');
-  });
 }
 
-B64toJsonHandler(HttpRequest request) {
-  print("B64 handler");
-  String boundary = request.headers.contentType.parameters['boundary'];
-  request
-    .transform(new MimeMultipartTransformer(boundary))
-    .map(HttpMultipartFormData.parse)
-    .map((HttpMultipartFormData formData) {
-       var file = formData.value("file");
-       print ("FileContent: $file");
-      // form data object available here.
-    });
-
-  return new Response.ok("B64 handler called");
-}
-
-Future<shelf.Response> _echoRequest(shelf.Request request) async {
-  String s = await request.readAsString();
-  print("Request URL: ${request.url}");
-  print("Request Mime Type: ${request.mimeType}");
-  print("Request: $s");
-  await executeCommand(".\\temp\\convert.py", [request.url.toString()]);
-  return new shelf.Response.ok('Request for "${request.url}" and $s ');
-}
 
 Future executeCommand(String command, List<String> attributes) async {
+  print ("command: $command");
+  print ("args: $attributes");
   Process process = await Process.start(command, attributes, runInShell: true);
   var lineStream = process.stdout.transform(new Utf8Decoder());
   await for (var l in lineStream) {
