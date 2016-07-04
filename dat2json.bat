@@ -1,1 +1,1 @@
-C:\ktcsrc\Projects\SmartphoneBasedTolling\SmartToll\trunk\Tools\message_creator\app_cfg.py spbt_config CONVERT C:\Users\polt\dart\deviceadminserver\temp.dat -o C:\Users\polt\dart\deviceadminserver\temp.json --in-format dat --out-format json
+C:\ktcsrc\Projects\SmartphoneBasedTolling\SmartToll\trunk\Tools\message_creator\app_cfg.py spbt_config CONVERT C:\ktcsrc\Projects\SmartphoneBasedTolling\SmartToll\trunk\Tools\deviceadminserver\temp.dat -o C:\ktcsrc\Projects\SmartphoneBasedTolling\SmartToll\trunk\Tools\deviceadminserver\temp.json --in-format dat --out-format json
