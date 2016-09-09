@@ -1,0 +1,1586 @@
+{
+  "engineConfig": {
+    "triggerMapConfig": {
+      "filterConfig": {
+        "radialFilter": {
+          "radius": 400
+        },
+        "type": "Radial"
+      }
+    },
+    "enableParallelization": false,
+    "filterConfig": [
+      {
+        "type": "Hot_Spot"
+      },
+      {
+        "type": "Normalize"
+      }
+    ],
+    "overrideBufferOnNewPositions": false,
+    "debugLogLevel": 3,
+    "autostartDetectionLoop": false,
+    "enableDebugLogging": true,
+    "bufferSize": 20,
+    "detectionConfig": {
+      "type": "Proximity_Based",
+      "proximityConfig": {
+        "maxCenterDistance": 80
+      }
+    }
+  },
+  "appConfig": {
+    "virtualGantryDetectionConfig": {
+      "positionIntervalSec": 1,
+      "positionIntervalMeter": 10,
+      "baseConfig": {
+        "url": {
+          "url": "https://qa.stlproxy.kapschtraffic.com:8443/smartphone/v2/positions/virtualgantry",
+          "credentials": "auth",
+          "type": "HTTPS"
+        },
+        "bufferingSec": 3600,
+        "enabled": true
+      }
+    },
+    "loggingConfig": {
+      "enabled": true,
+      "level": "DEBUG"
+    },
+    "trialConfig": {
+      "acceptedUsers": {
+        "data": [
+          {
+            "data": {
+              "country": "AT",
+              "cat": "EURO0",
+              "type": "0",
+              "lpn": "W-POSCH1"
+            },
+            "name": "poschinger1"
+          },
+          {
+            "data": {
+              "country": "AT",
+              "cat": "EURO0",
+              "type": "0",
+              "lpn": "W-POSCH2"
+            },
+            "name": "poschinger2"
+          },
+          {
+            "data": {
+              "country": "AT",
+              "cat": "EURO0",
+              "type": "0",
+              "lpn": "W-POSCH3"
+            },
+            "name": "poschinger3"
+          }
+        ],
+        "name": "users"
+      }
+    },
+    "eventConfig": {
+      "url": {
+        "url": "https://qa.stlproxy.kapschtraffic.com:8443/smartphone/v2/events",
+        "credentials": "auth",
+        "type": "HTTPS"
+      },
+      "bufferingSec": 3600,
+      "enabled": true
+    },
+    "roadFeatureConfig": {
+      "url": {
+        "url": "AAAAAAAAAAAAAAAAAA",
+        "credentials": "auth",
+        "type": "HTTPS"
+      },
+      "updateIntervalSec": 600
+    },
+    "userConfig": {
+      "enabledAutomaticTolling": true,
+      "notificationConfig": {
+        "audioEnabled": true,
+        "visualEnabled": true
+      }
+    },
+    "probeDataConfig": {
+      "positionIntervalSec": 60,
+      "sendIntervalSec": 60,
+      "positionIntervalMeter": 100,
+      "baseConfig": {
+        "url": {
+          "url": "127.0.0.1:8888",
+          "credentials": "auth",
+          "type": "HTTPS"
+        },
+        "bufferingSec": 0,
+        "enabled": false
+      }
+    },
+    "configurationServiceUrl": {
+      "url": {
+        "url": "BBBBBBBBBBBBBBBBBBBBBBB",
+        "credentials": "auth",
+        "type": "HTTPS"
+      },
+      "updateIntervalSec": 3600
+    },
+    "testingConfig": {
+      "tollsFile": "",
+      "tollsMappingFile": "",
+      "selectedVehicle": "AT123",
+      "simulationEnabled": true,
+      "initialBalance": 1,
+      "loginUser": "username",
+      "loginPwd": "pwd",
+      "defaultSimulationFile": "test_parndorf.sim",
+      "defaultRoadFeature": {
+        "roadFeature": {
+          "validFrom": "2015-09-23T09:28:19.000Z",
+          "version": 99,
+          "algorithm": "PoximityBased"
+        },
+        "type": "FeatureCollection",
+        "features": [
+          {
+            "geometry": {
+              "type": "LineString",
+              "coordinates": [
+                {
+                  "lon": 16.3995623588562,
+                  "lat": 48.17236787101409
+                },
+                {
+                  "lon": 16.399755477905273,
+                  "lat": 48.17225339130194
+                },
+                {
+                  "lon": 16.399927139282227,
+                  "lat": 48.172110291302374
+                }
+              ]
+            },
+            "type": "Feature",
+            "properties": {
+              "maxDetectionTime": 6000,
+              "confidence": 0.5,
+              "bothdirections": 1,
+              "maxDistance": 14,
+              "required": false,
+              "featureZoneId": 0,
+              "triggerIndex": 1,
+              "detectionUpdateIntervall": 500,
+              "type": 0,
+              "id": 1,
+              "name": "Zone 1",
+              "actions": [
+                {
+                  "action": "tolling"
+                }
+              ]
+            }
+          },
+          {
+            "geometry": {
+              "type": "LineString",
+              "coordinates": [
+                {
+                  "lon": 16.44532084465027,
+                  "lat": 48.124206608666945
+                },
+                {
+                  "lon": 16.445374488830566,
+                  "lat": 48.124034727781705
+                },
+                {
+                  "lon": 16.44551396369934,
+                  "lat": 48.12381987586636
+                }
+              ]
+            },
+            "type": "Feature",
+            "properties": {
+              "maxDetectionTime": 6000,
+              "confidence": 0.5,
+              "bothdirections": 1,
+              "maxDistance": 14,
+              "required": false,
+              "featureZoneId": 0,
+              "triggerIndex": 1,
+              "detectionUpdateIntervall": 500,
+              "type": 0,
+              "id": 2,
+              "name": "Zone 2",
+              "actions": [
+                {
+                  "action": "tolling"
+                }
+              ]
+            }
+          },
+          {
+            "geometry": {
+              "type": "LineString",
+              "coordinates": [
+                {
+                  "lon": 16.447423696517944,
+                  "lat": 48.113507717856926
+                },
+                {
+                  "lon": 16.447407603263855,
+                  "lat": 48.11340564239542
+                },
+                {
+                  "lon": 16.44738882780075,
+                  "lat": 48.11331252074489
+                }
+              ]
+            },
+            "type": "Feature",
+            "properties": {
+              "maxDetectionTime": 6000,
+              "confidence": 0.5,
+              "bothdirections": 0,
+              "maxDistance": 14,
+              "required": false,
+              "featureZoneId": 0,
+              "triggerIndex": 1,
+              "detectionUpdateIntervall": 500,
+              "type": 0,
+              "id": 3,
+              "name": "Zone 3",
+              "actions": [
+                {
+                  "action": "tolling"
+                }
+              ]
+            }
+          },
+          {
+            "geometry": {
+              "type": "LineString",
+              "coordinates": [
+                {
+                  "lon": 16.447455883026123,
+                  "lat": 48.11330356673112
+                },
+                {
+                  "lon": 16.447466611862183,
+                  "lat": 48.11338594359881
+                },
+                {
+                  "lon": 16.447485387325287,
+                  "lat": 48.113496973081055
+                }
+              ]
+            },
+            "type": "Feature",
+            "properties": {
+              "maxDetectionTime": 6000,
+              "confidence": 0.5,
+              "bothdirections": 0,
+              "maxDistance": 14,
+              "required": false,
+              "featureZoneId": 0,
+              "triggerIndex": 1,
+              "detectionUpdateIntervall": 500,
+              "type": 0,
+              "id": 4,
+              "name": "Zone 4",
+              "actions": [
+                {
+                  "action": "tolling"
+                }
+              ]
+            }
+          },
+          {
+            "geometry": {
+              "type": "LineString",
+              "coordinates": [
+                {
+                  "lon": 16.446849703788757,
+                  "lat": 48.11052953815396
+                },
+                {
+                  "lon": 16.44682288169861,
+                  "lat": 48.110443574902135
+                },
+                {
+                  "lon": 16.44680142402649,
+                  "lat": 48.11033253882235
+                }
+              ]
+            },
+            "type": "Feature",
+            "properties": {
+              "maxDetectionTime": 6000,
+              "confidence": 0.5,
+              "bothdirections": 0,
+              "maxDistance": 14,
+              "required": false,
+              "featureZoneId": 0,
+              "triggerIndex": 1,
+              "detectionUpdateIntervall": 500,
+              "type": 0,
+              "id": 5,
+              "name": "Zone 5",
+              "actions": [
+                {
+                  "action": "tolling"
+                }
+              ]
+            }
+          },
+          {
+            "geometry": {
+              "type": "LineString",
+              "coordinates": [
+                {
+                  "lon": 16.446090638637543,
+                  "lat": 48.108006098690105
+                },
+                {
+                  "lon": 16.446069180965424,
+                  "lat": 48.10794878705748
+                },
+                {
+                  "lon": 16.446053087711334,
+                  "lat": 48.10789863932652
+                }
+              ]
+            },
+            "type": "Feature",
+            "properties": {
+              "maxDetectionTime": 6000,
+              "confidence": 0.5,
+              "bothdirections": 1,
+              "maxDistance": 14,
+              "required": false,
+              "featureZoneId": 0,
+              "triggerIndex": 1,
+              "detectionUpdateIntervall": 500,
+              "type": 0,
+              "id": 6,
+              "name": "Zone 6",
+              "actions": [
+                {
+                  "action": "tolling"
+                }
+              ]
+            }
+          },
+          {
+            "geometry": {
+              "type": "LineString",
+              "coordinates": [
+                {
+                  "lon": 16.445631980895996,
+                  "lat": 48.106507020273
+                },
+                {
+                  "lon": 16.445589065551758,
+                  "lat": 48.10640672194856
+                },
+                {
+                  "lon": 16.44555687904358,
+                  "lat": 48.106263438288394
+                }
+              ]
+            },
+            "type": "Feature",
+            "properties": {
+              "maxDetectionTime": 6000,
+              "confidence": 0.5,
+              "bothdirections": 1,
+              "maxDistance": 14,
+              "required": false,
+              "featureZoneId": 0,
+              "triggerIndex": 1,
+              "detectionUpdateIntervall": 500,
+              "type": 0,
+              "id": 7,
+              "name": "Zone 7",
+              "actions": [
+                {
+                  "action": "tolling"
+                }
+              ]
+            }
+          },
+          {
+            "geometry": {
+              "type": "LineString",
+              "coordinates": [
+                {
+                  "lon": 16.44479513168335,
+                  "lat": 48.10380606134883
+                },
+                {
+                  "lon": 16.44474148750305,
+                  "lat": 48.10364844132579
+                },
+                {
+                  "lon": 16.444687843322754,
+                  "lat": 48.103476491658505
+                }
+              ]
+            },
+            "type": "Feature",
+            "properties": {
+              "maxDetectionTime": 6000,
+              "confidence": 0.5,
+              "bothdirections": 1,
+              "maxDistance": 14,
+              "required": false,
+              "featureZoneId": 0,
+              "triggerIndex": 1,
+              "detectionUpdateIntervall": 500,
+              "type": 0,
+              "id": 8,
+              "name": "Zone 8",
+              "actions": [
+                {
+                  "action": "tolling"
+                }
+              ]
+            }
+          },
+          {
+            "geometry": {
+              "type": "LineString",
+              "coordinates": [
+                {
+                  "lon": 16.442670822143555,
+                  "lat": 48.09711036686312
+                },
+                {
+                  "lon": 16.442649364471436,
+                  "lat": 48.0970243811664
+                },
+                {
+                  "lon": 16.442622542381283,
+                  "lat": 48.09694197807207
+                }
+              ]
+            },
+            "type": "Feature",
+            "properties": {
+              "maxDetectionTime": 6000,
+              "confidence": 0.5,
+              "bothdirections": 0,
+              "maxDistance": 14,
+              "required": false,
+              "featureZoneId": 0,
+              "triggerIndex": 1,
+              "detectionUpdateIntervall": 500,
+              "type": 0,
+              "id": 9,
+              "name": "Zone 9",
+              "actions": [
+                {
+                  "action": "tolling"
+                }
+              ]
+            }
+          },
+          {
+            "geometry": {
+              "type": "LineString",
+              "coordinates": [
+                {
+                  "lon": 16.442676186561584,
+                  "lat": 48.096934812579384
+                },
+                {
+                  "lon": 16.442692279815674,
+                  "lat": 48.097020798425895
+                },
+                {
+                  "lon": 16.442719101905823,
+                  "lat": 48.097099618658895
+                }
+              ]
+            },
+            "type": "Feature",
+            "properties": {
+              "maxDetectionTime": 6000,
+              "confidence": 0.5,
+              "bothdirections": 0,
+              "maxDistance": 14,
+              "required": false,
+              "featureZoneId": 0,
+              "triggerIndex": 1,
+              "detectionUpdateIntervall": 500,
+              "type": 0,
+              "id": 10,
+              "name": "Zone 10",
+              "actions": [
+                {
+                  "action": "tolling"
+                }
+              ]
+            }
+          },
+          {
+            "geometry": {
+              "type": "LineString",
+              "coordinates": [
+                {
+                  "lon": 16.441555023193356,
+                  "lat": 48.09179689725566
+                },
+                {
+                  "lon": 16.441555023193356,
+                  "lat": 48.091617741712646
+                },
+                {
+                  "lon": 16.441555023193356,
+                  "lat": 48.09143858554548
+                }
+              ]
+            },
+            "type": "Feature",
+            "properties": {
+              "maxDetectionTime": 6000,
+              "confidence": 0.5,
+              "bothdirections": 1,
+              "maxDistance": 14,
+              "required": false,
+              "featureZoneId": 0,
+              "triggerIndex": 1,
+              "detectionUpdateIntervall": 500,
+              "type": 0,
+              "id": 11,
+              "name": "Zone 11",
+              "actions": [
+                {
+                  "action": "tolling"
+                }
+              ]
+            }
+          },
+          {
+            "geometry": {
+              "type": "LineString",
+              "coordinates": [
+                {
+                  "lon": 16.4430570602417,
+                  "lat": 48.08569092451706
+                },
+                {
+                  "lon": 16.443121433258057,
+                  "lat": 48.08553324895304
+                },
+                {
+                  "lon": 16.443239450454712,
+                  "lat": 48.08534690448149
+                }
+              ]
+            },
+            "type": "Feature",
+            "properties": {
+              "maxDetectionTime": 6000,
+              "confidence": 0.5,
+              "bothdirections": 1,
+              "maxDistance": 14,
+              "required": false,
+              "featureZoneId": 0,
+              "triggerIndex": 1,
+              "detectionUpdateIntervall": 500,
+              "type": 0,
+              "id": 12,
+              "name": "Zone 12",
+              "actions": [
+                {
+                  "action": "tolling"
+                }
+              ]
+            }
+          },
+          {
+            "geometry": {
+              "type": "LineString",
+              "coordinates": [
+                {
+                  "lon": 16.450701355934143,
+                  "lat": 48.07335135068909
+                },
+                {
+                  "lon": 16.45079255104065,
+                  "lat": 48.07323665009116
+                },
+                {
+                  "lon": 16.450894474983215,
+                  "lat": 48.07313270245342
+                }
+              ]
+            },
+            "type": "Feature",
+            "properties": {
+              "maxDetectionTime": 6000,
+              "confidence": 0.5,
+              "bothdirections": 1,
+              "maxDistance": 14,
+              "required": false,
+              "featureZoneId": 0,
+              "triggerIndex": 1,
+              "detectionUpdateIntervall": 500,
+              "type": 0,
+              "id": 13,
+              "name": "Zone 13",
+              "actions": [
+                {
+                  "action": "tolling"
+                }
+              ]
+            }
+          },
+          {
+            "geometry": {
+              "type": "LineString",
+              "coordinates": [
+                {
+                  "lon": 16.463125348091125,
+                  "lat": 48.06005154657731
+                },
+                {
+                  "lon": 16.46322727203369,
+                  "lat": 48.05994040166019
+                },
+                {
+                  "lon": 16.463356018066406,
+                  "lat": 48.059811329842375
+                }
+              ]
+            },
+            "type": "Feature",
+            "properties": {
+              "maxDetectionTime": 6000,
+              "confidence": 0.5,
+              "bothdirections": 1,
+              "maxDistance": 14,
+              "required": false,
+              "featureZoneId": 0,
+              "triggerIndex": 1,
+              "detectionUpdateIntervall": 500,
+              "type": 0,
+              "id": 14,
+              "name": "Zone 14",
+              "actions": [
+                {
+                  "action": "tolling"
+                }
+              ]
+            }
+          },
+          {
+            "geometry": {
+              "type": "LineString",
+              "coordinates": [
+                {
+                  "lon": 16.46847367286682,
+                  "lat": 48.05433982130814
+                },
+                {
+                  "lon": 16.468559503555298,
+                  "lat": 48.05424300694437
+                },
+                {
+                  "lon": 16.468672156333923,
+                  "lat": 48.0541210923014
+                }
+              ]
+            },
+            "type": "Feature",
+            "properties": {
+              "maxDetectionTime": 6000,
+              "confidence": 0.5,
+              "bothdirections": 0,
+              "maxDistance": 14,
+              "required": false,
+              "featureZoneId": 0,
+              "triggerIndex": 1,
+              "detectionUpdateIntervall": 500,
+              "type": 0,
+              "id": 15,
+              "name": "Zone 15",
+              "actions": [
+                {
+                  "action": "tolling"
+                }
+              ]
+            }
+          },
+          {
+            "geometry": {
+              "type": "LineString",
+              "coordinates": [
+                {
+                  "lon": 16.46847367286682,
+                  "lat": 48.05433982130814
+                },
+                {
+                  "lon": 16.468559503555298,
+                  "lat": 48.05424300694437
+                },
+                {
+                  "lon": 16.468672156333923,
+                  "lat": 48.0541210923014
+                }
+              ]
+            },
+            "type": "Feature",
+            "properties": {
+              "maxDetectionTime": 6000,
+              "confidence": 0.5,
+              "bothdirections": 1,
+              "maxDistance": 14,
+              "required": false,
+              "featureZoneId": 0,
+              "triggerIndex": 1,
+              "detectionUpdateIntervall": 500,
+              "type": 0,
+              "id": 16,
+              "name": "Zone 16",
+              "actions": [
+                {
+                  "action": "tolling"
+                }
+              ]
+            }
+          },
+          {
+            "geometry": {
+              "type": "LineString",
+              "coordinates": [
+                {
+                  "lon": 16.47700309753418,
+                  "lat": 48.045209784654446
+                },
+                {
+                  "lon": 16.477099657058716,
+                  "lat": 48.04508067590866
+                },
+                {
+                  "lon": 16.47727131843567,
+                  "lat": 48.04491570315144
+                }
+              ]
+            },
+            "type": "Feature",
+            "properties": {
+              "maxDetectionTime": 6000,
+              "confidence": 0.5,
+              "bothdirections": 1,
+              "maxDistance": 14,
+              "required": false,
+              "featureZoneId": 0,
+              "triggerIndex": 1,
+              "detectionUpdateIntervall": 500,
+              "type": 0,
+              "id": 17,
+              "name": "Zone 17",
+              "actions": [
+                {
+                  "action": "tolling"
+                }
+              ]
+            }
+          },
+          {
+            "geometry": {
+              "type": "LineString",
+              "coordinates": [
+                {
+                  "lon": 16.498771905899044,
+                  "lat": 48.03338782013047
+                },
+                {
+                  "lon": 16.49898648262024,
+                  "lat": 48.03335194839185
+                },
+                {
+                  "lon": 16.49920105934143,
+                  "lat": 48.0332945535581
+                }
+              ]
+            },
+            "type": "Feature",
+            "properties": {
+              "maxDetectionTime": 6000,
+              "confidence": 0.5,
+              "bothdirections": 1,
+              "maxDistance": 14,
+              "required": false,
+              "featureZoneId": 0,
+              "triggerIndex": 1,
+              "detectionUpdateIntervall": 500,
+              "type": 0,
+              "id": 18,
+              "name": "Zone 18",
+              "actions": [
+                {
+                  "action": "tolling"
+                }
+              ]
+            }
+          },
+          {
+            "geometry": {
+              "type": "LineString",
+              "coordinates": [
+                {
+                  "lon": 16.509640216827393,
+                  "lat": 48.030962834385214
+                },
+                {
+                  "lon": 16.509833335876465,
+                  "lat": 48.0309126115808
+                },
+                {
+                  "lon": 16.510037183761597,
+                  "lat": 48.030876738119105
+                }
+              ]
+            },
+            "type": "Feature",
+            "properties": {
+              "maxDetectionTime": 6000,
+              "confidence": 0.5,
+              "bothdirections": 1,
+              "maxDistance": 14,
+              "required": false,
+              "featureZoneId": 0,
+              "triggerIndex": 1,
+              "detectionUpdateIntervall": 500,
+              "type": 0,
+              "id": 19,
+              "name": "Zone 19",
+              "actions": [
+                {
+                  "action": "tolling"
+                }
+              ]
+            }
+          },
+          {
+            "geometry": {
+              "type": "LineString",
+              "coordinates": [
+                {
+                  "lon": 16.522761583328247,
+                  "lat": 48.02804983082099
+                },
+                {
+                  "lon": 16.52290105819702,
+                  "lat": 48.02802113045938
+                },
+                {
+                  "lon": 16.523094177246094,
+                  "lat": 48.027992430081795
+                }
+              ]
+            },
+            "type": "Feature",
+            "properties": {
+              "maxDetectionTime": 6000,
+              "confidence": 0.5,
+              "bothdirections": 1,
+              "maxDistance": 14,
+              "required": false,
+              "featureZoneId": 0,
+              "triggerIndex": 1,
+              "detectionUpdateIntervall": 500,
+              "type": 0,
+              "id": 20,
+              "name": "Zone 20",
+              "actions": [
+                {
+                  "action": "tolling"
+                }
+              ]
+            }
+          },
+          {
+            "geometry": {
+              "type": "LineString",
+              "coordinates": [
+                {
+                  "lon": 16.53243899345398,
+                  "lat": 48.0271744626021
+                },
+                {
+                  "lon": 16.53269648551941,
+                  "lat": 48.0271744626021
+                },
+                {
+                  "lon": 16.53295397758484,
+                  "lat": 48.027167287391315
+                }
+              ]
+            },
+            "type": "Feature",
+            "properties": {
+              "maxDetectionTime": 6000,
+              "confidence": 0.5,
+              "bothdirections": 1,
+              "maxDistance": 14,
+              "required": false,
+              "featureZoneId": 0,
+              "triggerIndex": 1,
+              "detectionUpdateIntervall": 500,
+              "type": 0,
+              "id": 21,
+              "name": "Zone 21",
+              "actions": [
+                {
+                  "action": "tolling"
+                }
+              ]
+            }
+          },
+          {
+            "geometry": {
+              "type": "LineString",
+              "coordinates": [
+                {
+                  "lon": 16.557383537292477,
+                  "lat": 48.026507163727395
+                },
+                {
+                  "lon": 16.55768394470215,
+                  "lat": 48.026507163727395
+                },
+                {
+                  "lon": 16.558070182800293,
+                  "lat": 48.02649281311907
+                }
+              ]
+            },
+            "type": "Feature",
+            "properties": {
+              "maxDetectionTime": 6000,
+              "confidence": 0.5,
+              "bothdirections": 1,
+              "maxDistance": 14,
+              "required": false,
+              "featureZoneId": 0,
+              "triggerIndex": 1,
+              "detectionUpdateIntervall": 500,
+              "type": 0,
+              "id": 22,
+              "name": "Zone 22",
+              "actions": [
+                {
+                  "action": "tolling"
+                }
+              ]
+            }
+          },
+          {
+            "geometry": {
+              "type": "LineString",
+              "coordinates": [
+                {
+                  "lon": 16.575987339019775,
+                  "lat": 48.02599771468482
+                },
+                {
+                  "lon": 16.576244831085205,
+                  "lat": 48.02599053931026
+                },
+                {
+                  "lon": 16.576545238494873,
+                  "lat": 48.02598336393467
+                }
+              ]
+            },
+            "type": "Feature",
+            "properties": {
+              "maxDetectionTime": 6000,
+              "confidence": 0.5,
+              "bothdirections": 1,
+              "maxDistance": 14,
+              "required": false,
+              "featureZoneId": 0,
+              "triggerIndex": 1,
+              "detectionUpdateIntervall": 500,
+              "type": 0,
+              "id": 23,
+              "name": "Zone 23",
+              "actions": [
+                {
+                  "action": "tolling"
+                }
+              ]
+            }
+          },
+          {
+            "geometry": {
+              "type": "LineString",
+              "coordinates": [
+                {
+                  "lon": 16.599504947662354,
+                  "lat": 48.02535192697127
+                },
+                {
+                  "lon": 16.599783897399902,
+                  "lat": 48.02535192697127
+                },
+                {
+                  "lon": 16.60010576248169,
+                  "lat": 48.0253375760413
+                }
+              ]
+            },
+            "type": "Feature",
+            "properties": {
+              "maxDetectionTime": 6000,
+              "confidence": 0.5,
+              "bothdirections": 1,
+              "maxDistance": 14,
+              "required": false,
+              "featureZoneId": 0,
+              "triggerIndex": 1,
+              "detectionUpdateIntervall": 500,
+              "type": 0,
+              "id": 24,
+              "name": "Zone 24",
+              "actions": [
+                {
+                  "action": "tolling"
+                },
+                {
+                  "action": "tts",
+                  "parameters": [ 
+                    {
+                      "parameter_key": "text",
+                      "parameter_value": "You passed gantry id {1} {2}"
+                    },  
+                    {
+                      "parameter_key": "{1}",
+                      "parameter_value": "{geo_id}"
+                    },  
+                    {
+                      "parameter_key": "{2}",
+                      "parameter_value": "{geo_name}"
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "geometry": {
+              "type": "LineString",
+              "coordinates": [
+                {
+                  "lon": 16.61062002182007,
+                  "lat": 48.02503620558874
+                },
+                {
+                  "lon": 16.61104917526245,
+                  "lat": 48.02503620558874
+                },
+                {
+                  "lon": 16.611435413360596,
+                  "lat": 48.025021854570866
+                }
+              ]
+            },
+            "type": "Feature",
+            "properties": {
+              "maxDetectionTime": 6000,
+              "confidence": 0.5,
+              "bothdirections": 1,
+              "maxDistance": 14,
+              "required": false,
+              "featureZoneId": 0,
+              "triggerIndex": 1,
+              "detectionUpdateIntervall": 500,
+              "type": 0,
+              "id": 25,
+              "name": "Zone 25",
+              "actions": [
+                {
+                  "action": "tolling"
+                },
+                {
+                  "action": "tts",
+                  "parameters": [ 
+                    {
+                      "parameter_key": "text",
+                      "parameter_value": "You passed gantry id {1} {2}"
+                    },  
+                    {
+                      "parameter_key": "{1}",
+                      "parameter_value": "{geo_id}"
+                    },  
+                    {
+                      "parameter_key": "{2}",
+                      "parameter_value": "{geo_name}"
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "geometry": {
+              "type": "LineString",
+              "coordinates": [
+                {
+                  "lon": 16.624996662139893,
+                  "lat": 48.02464872670343
+                },
+                {
+                  "lon": 16.625264883041382,
+                  "lat": 48.02464872670343
+                },
+                {
+                  "lon": 16.625490188598633,
+                  "lat": 48.02464872670343
+                }
+              ]
+            },
+            "type": "Feature",
+            "properties": {
+              "maxDetectionTime": 6000,
+              "confidence": 0.5,
+              "bothdirections": 1,
+              "maxDistance": 14,
+              "required": false,
+              "featureZoneId": 0,
+              "triggerIndex": 1,
+              "detectionUpdateIntervall": 500,
+              "type": 0,
+              "id": 26,
+              "name": "Zone 26",
+              "actions": [
+                {
+                  "action": "tolling"
+                },
+                {
+                  "action": "tts",
+                  "parameters": [ 
+                    {
+                      "parameter_key": "text",
+                      "parameter_value": "You passed gantry id {1} {2}"
+                    },  
+                    {
+                      "parameter_key": "{1}",
+                      "parameter_value": "{geo_id}"
+                    },  
+                    {
+                      "parameter_key": "{2}",
+                      "parameter_value": "{geo_name}"
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "geometry": {
+              "type": "LineString",
+              "coordinates": [
+                {
+                  "lon": 16.653084754943848,
+                  "lat": 48.02390246286539
+                },
+                {
+                  "lon": 16.653352975845337,
+                  "lat": 48.023895287199124
+                },
+                {
+                  "lon": 16.653621196746826,
+                  "lat": 48.023888111531846
+                }
+              ]
+            },
+            "type": "Feature",
+            "properties": {
+              "maxDetectionTime": 6000,
+              "confidence": 0.5,
+              "bothdirections": 1,
+              "maxDistance": 14,
+              "required": false,
+              "featureZoneId": 0,
+              "triggerIndex": 1,
+              "detectionUpdateIntervall": 500,
+              "type": 0,
+              "id": 27,
+              "name": "Zone 27",
+              "actions": [
+                {
+                  "action": "tolling"
+                },
+                {
+                  "action": "tts",
+                  "parameters": [ 
+                    {
+                      "parameter_key": "text",
+                      "parameter_value": "You passed gantry id {1} {2}"
+                    },  
+                    {
+                      "parameter_key": "{1}",
+                      "parameter_value": "{geo_id}"
+                    },  
+                    {
+                      "parameter_key": "{2}",
+                      "parameter_value": "{geo_name}"
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "geometry": {
+              "type": "LineString",
+              "coordinates": [
+                {
+                  "lon": 16.69797420501709,
+                  "lat": 48.022625178533325
+                },
+                {
+                  "lon": 16.69824242591858,
+                  "lat": 48.022618002689256
+                },
+                {
+                  "lon": 16.69851064682007,
+                  "lat": 48.02261082684417
+                }
+              ]
+            },
+            "type": "Feature",
+            "properties": {
+              "maxDetectionTime": 6000,
+              "confidence": 0.5,
+              "bothdirections": 1,
+              "maxDistance": 14,
+              "required": false,
+              "featureZoneId": 0,
+              "triggerIndex": 1,
+              "detectionUpdateIntervall": 500,
+              "type": 0,
+              "id": 28,
+              "name": "Zone 28",
+              "actions": [
+                {
+                  "action": "tolling"
+                },
+                {
+                  "action": "tts",
+                  "parameters": [ 
+                    {
+                      "parameter_key": "text",
+                      "parameter_value": "You passed gantry id {1} {2}"
+                    },  
+                    {
+                      "parameter_key": "{1}",
+                      "parameter_value": "{geo_id}"
+                    },  
+                    {
+                      "parameter_key": "{2}",
+                      "parameter_value": "{geo_name}"
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "geometry": {
+              "type": "LineString",
+              "coordinates": [
+                {
+                  "lon": 16.742370128631592,
+                  "lat": 48.02130480640519
+                },
+                {
+                  "lon": 16.742756366729736,
+                  "lat": 48.021290454348446
+                },
+                {
+                  "lon": 16.7431640625,
+                  "lat": 48.02127610228768
+                }
+              ]
+            },
+            "type": "Feature",
+            "properties": {
+              "maxDetectionTime": 6000,
+              "confidence": 0.5,
+              "bothdirections": 1,
+              "maxDistance": 14,
+              "required": false,
+              "featureZoneId": 0,
+              "triggerIndex": 1,
+              "detectionUpdateIntervall": 500,
+              "type": 0,
+              "id": 29,
+              "name": "Zone 29",
+              "actions": [
+                {
+                  "action": "tolling"
+                },
+                {
+                  "action": "tts",
+                  "parameters": [ 
+                    {
+                      "parameter_key": "text",
+                      "parameter_value": "You passed gantry id {1} {2}"
+                    },  
+                    {
+                      "parameter_key": "{1}",
+                      "parameter_value": "{geo_id}"
+                    },  
+                    {
+                      "parameter_key": "{2}",
+                      "parameter_value": "{geo_name}"
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "geometry": {
+              "type": "LineString",
+              "coordinates": [
+                {
+                  "lon": 16.770522594451904,
+                  "lat": 48.019726056207574
+                },
+                {
+                  "lon": 16.770780086517334,
+                  "lat": 48.01971170371128
+                },
+                {
+                  "lon": 16.771037578582764,
+                  "lat": 48.01970452746165
+                }
+              ]
+            },
+            "type": "Feature",
+            "properties": {
+              "maxDetectionTime": 6000,
+              "confidence": 0.5,
+              "bothdirections": 1,
+              "maxDistance": 14,
+              "required": false,
+              "featureZoneId": 0,
+              "triggerIndex": 1,
+              "detectionUpdateIntervall": 500,
+              "type": 0,
+              "id": 30,
+              "actions": [
+                {
+                  "action": "tolling"
+                },
+                {
+                  "action": "tts",
+                  "parameters": [ 
+                    {
+                      "parameter_key": "text",
+                      "parameter_value": "You passed gantry id {1} {2}"
+                    },  
+                    {
+                      "parameter_key": "{1}",
+                      "parameter_value": "{geo_id}"
+                    },  
+                    {
+                      "parameter_key": "{2}",
+                      "parameter_value": "{geo_name}"
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "geometry": {
+              "type": "LineString",
+              "coordinates": [
+                {
+                  "lon": 16.814403533935547,
+                  "lat": 48.013546937149485
+                },
+                {
+                  "lon": 16.81460738182068,
+                  "lat": 48.013439280428614
+                },
+                {
+                  "lon": 16.81481122970581,
+                  "lat": 48.01332444634526
+                }
+              ]
+            },
+            "type": "Feature",
+            "properties": {
+              "maxDetectionTime": 6000,
+              "confidence": 0.5,
+              "bothdirections": 0,
+              "maxDistance": 14,
+              "required": false,
+              "featureZoneId": 0,
+              "triggerIndex": 1,
+              "detectionUpdateIntervall": 500,
+              "type": 0,
+              "id": 31,
+              "name": "Zone 31",
+              "actions": [
+                {
+                  "action": "tolling"
+                },
+                {
+                  "action": "tts",
+                  "parameters": [ 
+                    {
+                      "parameter_key": "text",
+                      "parameter_value": "You passed gantry id {1} {2}"
+                    },  
+                    {
+                      "parameter_key": "{1}",
+                      "parameter_value": "{geo_id}"
+                    },  
+                    {
+                      "parameter_key": "{2}",
+                      "parameter_value": "{geo_name}"
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "geometry": {
+              "type": "LineString",
+              "coordinates": [
+                {
+                  "lon": 16.830110549926758,
+                  "lat": 48.00127980205341
+                },
+                {
+                  "lon": 16.83030366897583,
+                  "lat": 48.00116494089381
+                },
+                {
+                  "lon": 16.83051824569702,
+                  "lat": 48.001035721783566
+                }
+              ]
+            },
+            "type": "Feature",
+            "properties": {
+              "maxDetectionTime": 6000,
+              "confidence": 0.5,
+              "bothdirections": 1,
+              "maxDistance": 40,
+              "required": false,
+              "featureZoneId": 0,
+              "triggerIndex": 1,
+              "detectionUpdateIntervall": 500,
+              "type": 0,
+              "id": 32,
+              "name": "Zone 32",
+              "actions": [
+                {
+                  "action": "tolling"
+                },
+                {
+                  "action": "tts",
+                  "parameters": [ 
+                    {
+                      "parameter_key": "text",
+                      "parameter_value": "You passed gantry id {1} {2}"
+                    },  
+                    {
+                      "parameter_key": "{1}",
+                      "parameter_value": "{geo_id}"
+                    },  
+                    {
+                      "parameter_key": "{2}",
+                      "parameter_value": "{geo_name}"
+                    }
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "geometry": {
+              "type": "LineString",
+              "coordinates": [
+                {
+                  "lon": 16.839487552642822,
+                  "lat": 47.99701541000795
+                },
+                {
+                  "lon": 16.839702129364014,
+                  "lat": 47.996914898199535
+                },
+                {
+                  "lon": 16.84006690979004,
+                  "lat": 47.99678566844385
+                }
+              ]
+            },
+            "type": "Feature",
+            "properties": {
+              "maxDetectionTime": 6000,
+              "confidence": 0.5,
+              "bothdirections": 1,
+              "maxDistance": 14,
+              "required": false,
+              "featureZoneId": 0,
+              "triggerIndex": 1,
+              "detectionUpdateIntervall": 500,
+              "type": 0,
+              "id": 33,
+              "name": "Zone 33",
+              "actions": [
+                {
+                  "action": "tolling"
+                },
+                {
+                  "action": "tts",
+                  "parameters": [ 
+                    {
+                      "parameter_key": "text",
+                      "parameter_value": "You passed gantry id {1} {2}"
+                    },  
+                    {
+                      "parameter_key": "{1}",
+                      "parameter_value": "{geo_id}"
+                    },  
+                    {
+                      "parameter_key": "{2}",
+                      "parameter_value": "{geo_name}"
+                    }
+                  ]
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "rawDataConfig": {
+      "sendIntervalSec": 10,
+      "baseConfig": {
+        "url": {
+          "url": "https://qa.stlproxy.kapschtraffic.com:8443/smartphone/v2/positions/raw",
+          "credentials": "auth",
+          "type": "HTTPS"
+        },
+        "bufferingSec": 3600,
+        "enabled": true
+      }
+    }
+  }
+}

@@ -1,0 +1,187 @@
+{
+  "engineConfig": {
+    "triggerMapConfig": {
+      "filterConfig": {
+        "radialFilter": {
+          "radius": 1000
+        }, 
+        "type": "Radial"
+      }
+    }, 
+    "enableParallelization": false, 
+    "filterConfig": [
+      {
+        "type": "Hot_Spot"
+      }, 
+      {
+        "type": "Normalize"
+      }
+    ], 
+    "overrideBufferOnNewPositions": false, 
+    "debugLogLevel": 0, 
+    "autostartDetectionLoop": false, 
+    "enableDebugLogging": false, 
+    "bufferSize": 20, 
+    "detectionConfig": {
+      "type": "Proximity_Based", 
+      "proximityConfig": {
+        "maxCenterDistance": 0
+      }
+    }
+  }, 
+  "appConfig": {
+    "virtualGantryDetectionConfig": {
+      "positionIntervalSec": 1, 
+      "positionIntervalMeter": 10, 
+      "baseConfig": {
+        "url": {
+          "url": "http://127.0.0.1:8888/smartphone/v1/positions/virtualgantry", 
+          "credentials": "auth", 
+          "type": "HTTPS"
+        }, 
+        "bufferingSec": 1200, 
+        "enabled": true
+      }
+    }, 
+    "loggingConfig": {
+      "enabled": true, 
+      "level": "DEBUG"
+    }, 
+    "trialConfig": {
+      "acceptedUsers": {
+        "data": [
+          {
+            "data": {
+              "country": "AT", 
+              "cat": "EURO0", 
+              "type": "0", 
+              "lpn": "W-112341A"
+            }, 
+            "name": "359523063970048"
+          }
+        ], 
+        "name": "users"
+      }
+    }, 
+    "eventConfig": {
+      "url": {
+        "url": "http://127.0.0.1:8888/smartphone/v1/events", 
+        "credentials": "auth", 
+        "type": "HTTPS"
+      }, 
+      "bufferingSec": 1200, 
+      "enabled": true
+    }, 
+    "roadFeatureConfig": {
+      "url": {
+        "url": "http://127.0.0.1:8888/smartphone/v1/roadfeatures/versions/LATEST", 
+        "credentials": "auth", 
+        "type": "HTTPS"
+      }, 
+      "updateIntervalSec": 3600
+    }, 
+    "userConfig": {
+      "enabledAutomaticTolling": true, 
+      "notificationConfig": {
+        "audioEnabled": true, 
+        "visualEnabled": true
+      }
+    }, 
+    "probeDataConfig": {
+      "positionIntervalSec": 60, 
+      "sendIntervalSec": 60, 
+      "positionIntervalMeter": 100, 
+      "baseConfig": {
+        "url": {
+          "url": "127.0.0.1:8888", 
+          "credentials": "auth", 
+          "type": "HTTPS"
+        }, 
+        "bufferingSec": 0, 
+        "enabled": false
+      }
+    }, 
+    "configurationServiceUrl": {
+      "url": {
+        "url": "http://127.0.0.1:8888/smartphone/v1/appconfiguration/versions/LATEST", 
+        "credentials": "auth", 
+        "type": "HTTPS"
+      }, 
+      "updateIntervalSec": 3600
+    }, 
+    "testingConfig": {
+      "tollsFile": "", 
+      "tollsMappingFile": "", 
+      "selectedVehicle": "AT123", 
+      "defaultSimulationFile": "", 
+      "initialBalance": 1, 
+      "loginUser": "username", 
+      "loginPwd": "pwd", 
+      "simulationEnabled": false, 
+      "defaultRoadFeature": {
+        "roadFeature": {
+          "validFrom": "2015-09-23T09:28:19.000Z", 
+          "version": 0, 
+          "algorithm": "PoximityBased"
+        }, 
+        "type": "FeatureCollection", 
+        "features": [
+          {
+            "geometry": {
+              "type": "Poligon", 
+              "coordinates": [
+                {
+                  "lat": 16.33002501719602, 
+                  "lon": 48.1349161862366
+                }, 
+                {
+                  "lat": 16.53002501719602, 
+                  "lon": 48.2349161862366
+                }
+              ]
+            }, 
+            "type": "Feature", 
+            "properties": {
+              "maxDetectionTime": 0, 
+              "confidence": 0.5, 
+              "name": "Inzersdorf", 
+              "maxDistance": 0, 
+              "required": true, 
+              "direction": 0, 
+              "actions": [
+                {
+                  "action": "bla", 
+                  "parameters": [
+                    {
+                      "parameterValue": "test value", 
+                      "parameterKey": "key_string"
+                    }
+                  ]
+                }
+              ], 
+              "id": 1, 
+              "triggerIndex": 1, 
+              "detectionUpdateIntervall": 0, 
+              "type": 0, 
+              "event": "EntranceExit", 
+              "featureZoneId": 0, 
+              "bothdirections": 0
+            }
+          }
+        ]
+      }
+    }, 
+    "rawDataConfig": {
+      "sendIntervalSec": 10, 
+      "baseConfig": {
+        "url": {
+          "url": "http://127.0.0.1:8888/smartphone/v1/positions/raw", 
+          "credentials": "auth", 
+          "type": "HTTPS"
+        }, 
+        "bufferingSec": 1200, 
+        "enabled": true
+      }
+    }
+  }
+}

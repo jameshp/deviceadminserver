@@ -45,7 +45,12 @@ class PostAPI {
     await datFile.writeAsBytes(dat_message);
 
     //print (b64_message);
-    await executeCommand("dat2json.bat", []);
+    if (Platform.isLinux){
+        await executeCommand("/app/dat2json.sh", []);
+    }
+    if (Platform.isWindows){
+       await executeCommand("dat2json.bat", []);
+    }
 
     File jsonFile = new File('temp.json');
     String mapAsJson = await jsonFile.readAsString();
@@ -67,7 +72,14 @@ class PostAPI {
       AppConfigMessage message) async {
     File jsonFile = new File("temp_json2dat.json");
     await jsonFile.writeAsBytes(message.appConfig.bytes);
-    Map exitCondition = await executeCommand("json2dat.bat", []);
+    Map exitCondition;
+    if (Platform.isLinux){
+        exitCondition = await executeCommand("/app/json2dat.sh", []);
+    }
+    if (Platform.isWindows){
+      exitCondition = await executeCommand("json2dat.bat", []);
+    }
+
 
     if (exitCondition['exitCode'] != 0){
       throw new RpcError(500, 'json to .dat conversion error', 'expected json input file could not be converted to .dat file')
@@ -87,7 +99,7 @@ Future main() async {
   _apiServer.enableDiscoveryApi();
   _apiServer.addApi(new AppConfigAPI());
 
-  final server = await HttpServer.bind(InternetAddress.ANY_IP_V4, 4242);
+  final server = await HttpServer.bind(InternetAddress.ANY_IP_V4, 8080);
   server.listen((HttpRequest request) {
     _apiServer.httpRequestHandler(request);
   });
