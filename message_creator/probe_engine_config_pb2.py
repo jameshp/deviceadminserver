@@ -17,7 +17,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='probe_engine_config.proto',
   package='Proto.Config',
   syntax='proto3',
-  serialized_pb=b'\n\x19probe_engine_config.proto\x12\x0cProto.Config\"\x80\x01\n\x14\x66ilter_config_object\x12<\n\x04type\x18\x01 \x01(\x0e\x32..Proto.Config.filter_config_object.filter_type\"*\n\x0b\x66ilter_type\x12\x0c\n\x08Hot_Spot\x10\x00\x12\r\n\tNormalize\x10\x01\"\xcd\x01\n\x1binterpolation_config_object\x12\x1d\n\x15interpolation_enabled\x18\x01 \x01(\x08\x12\x14\n\x0cmin_gap_size\x18\x02 \x01(\r\x12\x14\n\x0cmax_gap_size\x18\x03 \x01(\x05\x12\x1b\n\x13interpolation_steps\x18\x04 \x01(\r\x12\"\n\x1amin_interpolation_distance\x18\x05 \x01(\r\x12\"\n\x1amax_interpolation_distance\x18\x06 \x01(\r\"\x90\x03\n\x17\x64\x65tection_config_object\x12\x42\n\x04type\x18\x01 \x01(\x0e\x32\x34.Proto.Config.detection_config_object.detection_type\x12W\n\x10proximity_config\x18\x02 \x01(\x0b\x32=.Proto.Config.detection_config_object.proximity_config_object\x12S\n\x0eweimann_config\x18\x03 \x01(\x0b\x32;.Proto.Config.detection_config_object.weimann_config_object\x1a\x36\n\x17proximity_config_object\x12\x1b\n\x13max_center_distance\x18\x01 \x01(\r\x1a\x17\n\x15weimann_config_object\"2\n\x0e\x64\x65tection_type\x12\x13\n\x0fProximity_Based\x10\x00\x12\x0b\n\x07Weimann\x10\x01\"\x9f\x03\n!trigger_area_filter_config_object\x12I\n\x04type\x18\x01 \x01(\x0e\x32;.Proto.Config.trigger_area_filter_config_object.filter_type\x12\\\n\nmap_filter\x18\x02 \x01(\x0b\x32H.Proto.Config.trigger_area_filter_config_object.map_filter_config_object\x12\x62\n\rradial_filter\x18\x03 \x01(\x0b\x32K.Proto.Config.trigger_area_filter_config_object.radial_filter_config_object\x1a\x1a\n\x18map_filter_config_object\x1a-\n\x1bradial_filter_config_object\x12\x0e\n\x06radius\x18\x01 \x01(\r\"\"\n\x0b\x66ilter_type\x12\x07\n\x03Map\x10\x00\x12\n\n\x06Radial\x10\x01\"h\n\x1etrigger_area_map_config_object\x12\x46\n\rfilter_config\x18\x01 \x01(\x0b\x32/.Proto.Config.trigger_area_filter_config_object\"\xd5\x03\n\x13probe_engine_config\x12\x13\n\x0b\x62uffer_size\x18\x01 \x01(\r\x12(\n override_buffer_on_new_positions\x18\x02 \x01(\x08\x12 \n\x18\x61utostart_detection_loop\x18\x03 \x01(\x08\x12\x1e\n\x16\x65nable_parallelization\x18\x04 \x01(\x08\x12\x39\n\rfilter_config\x18\x05 \x03(\x0b\x32\".Proto.Config.filter_config_object\x12?\n\x10\x64\x65tection_config\x18\x06 \x01(\x0b\x32%.Proto.Config.detection_config_object\x12H\n\x12trigger_map_config\x18\x07 \x01(\x0b\x32,.Proto.Config.trigger_area_map_config_object\x12\x1c\n\x14\x65nable_debug_logging\x18\x08 \x01(\x08\x12\x17\n\x0f\x64\x65\x62ug_log_level\x18\t \x01(\r\x12@\n\rinterpolation\x18\n \x01(\x0b\x32).Proto.Config.interpolation_config_objectB2\n net.ktc.miles.model.proto.configB\x0c\x45ngineConfigH\x01\x62\x06proto3'
+  serialized_pb=b'\n\x19probe_engine_config.proto\x12\x0cProto.Config\"\x93\x01\n\x14\x66ilter_config_object\x12<\n\x04type\x18\x01 \x01(\x0e\x32..Proto.Config.filter_config_object.filter_type\"=\n\x0b\x66ilter_type\x12\x0c\n\x08Hot_Spot\x10\x00\x12\r\n\tNormalize\x10\x01\x12\x11\n\rInterpolation\x10\x02\"\xf3\x01\n\x1binterpolation_config_object\x12\x1d\n\x15interpolation_enabled\x18\x01 \x01(\x08\x12\x14\n\x0cmin_gap_size\x18\x02 \x01(\r\x12\x14\n\x0cmax_gap_size\x18\x03 \x01(\x05\x12\x1b\n\x13interpolation_steps\x18\x04 \x01(\r\x12\"\n\x1amin_interpolation_distance\x18\x05 \x01(\r\x12\"\n\x1amax_interpolation_distance\x18\x06 \x01(\r\x12$\n\x1cmin_angle_for_curve_interpol\x18\x07 \x01(\r\"\x90\x03\n\x17\x64\x65tection_config_object\x12\x42\n\x04type\x18\x01 \x01(\x0e\x32\x34.Proto.Config.detection_config_object.detection_type\x12W\n\x10proximity_config\x18\x02 \x01(\x0b\x32=.Proto.Config.detection_config_object.proximity_config_object\x12S\n\x0eweimann_config\x18\x03 \x01(\x0b\x32;.Proto.Config.detection_config_object.weimann_config_object\x1a\x36\n\x17proximity_config_object\x12\x1b\n\x13max_center_distance\x18\x01 \x01(\r\x1a\x17\n\x15weimann_config_object\"2\n\x0e\x64\x65tection_type\x12\x13\n\x0fProximity_Based\x10\x00\x12\x0b\n\x07Weimann\x10\x01\"\x9f\x03\n!trigger_area_filter_config_object\x12I\n\x04type\x18\x01 \x01(\x0e\x32;.Proto.Config.trigger_area_filter_config_object.filter_type\x12\\\n\nmap_filter\x18\x02 \x01(\x0b\x32H.Proto.Config.trigger_area_filter_config_object.map_filter_config_object\x12\x62\n\rradial_filter\x18\x03 \x01(\x0b\x32K.Proto.Config.trigger_area_filter_config_object.radial_filter_config_object\x1a\x1a\n\x18map_filter_config_object\x1a-\n\x1bradial_filter_config_object\x12\x0e\n\x06radius\x18\x01 \x01(\r\"\"\n\x0b\x66ilter_type\x12\x07\n\x03Map\x10\x00\x12\n\n\x06Radial\x10\x01\"h\n\x1etrigger_area_map_config_object\x12\x46\n\rfilter_config\x18\x01 \x01(\x0b\x32/.Proto.Config.trigger_area_filter_config_object\"\xd5\x03\n\x13probe_engine_config\x12\x13\n\x0b\x62uffer_size\x18\x01 \x01(\r\x12(\n override_buffer_on_new_positions\x18\x02 \x01(\x08\x12 \n\x18\x61utostart_detection_loop\x18\x03 \x01(\x08\x12\x1e\n\x16\x65nable_parallelization\x18\x04 \x01(\x08\x12\x39\n\rfilter_config\x18\x05 \x03(\x0b\x32\".Proto.Config.filter_config_object\x12?\n\x10\x64\x65tection_config\x18\x06 \x01(\x0b\x32%.Proto.Config.detection_config_object\x12H\n\x12trigger_map_config\x18\x07 \x01(\x0b\x32,.Proto.Config.trigger_area_map_config_object\x12\x1c\n\x14\x65nable_debug_logging\x18\x08 \x01(\x08\x12\x17\n\x0f\x64\x65\x62ug_log_level\x18\t \x01(\r\x12@\n\rinterpolation\x18\n \x01(\x0b\x32).Proto.Config.interpolation_config_objectB2\n net.ktc.miles.model.proto.configB\x0c\x45ngineConfigH\x01\x62\x06proto3'
 )
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
@@ -37,11 +37,15 @@ _FILTER_CONFIG_OBJECT_FILTER_TYPE = _descriptor.EnumDescriptor(
       name='Normalize', index=1, number=1,
       options=None,
       type=None),
+    _descriptor.EnumValueDescriptor(
+      name='Interpolation', index=2, number=2,
+      options=None,
+      type=None),
   ],
   containing_type=None,
   options=None,
   serialized_start=130,
-  serialized_end=172,
+  serialized_end=191,
 )
 _sym_db.RegisterEnumDescriptor(_FILTER_CONFIG_OBJECT_FILTER_TYPE)
 
@@ -62,8 +66,8 @@ _DETECTION_CONFIG_OBJECT_DETECTION_TYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=733,
-  serialized_end=783,
+  serialized_start=790,
+  serialized_end=840,
 )
 _sym_db.RegisterEnumDescriptor(_DETECTION_CONFIG_OBJECT_DETECTION_TYPE)
 
@@ -84,8 +88,8 @@ _TRIGGER_AREA_FILTER_CONFIG_OBJECT_FILTER_TYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=1167,
-  serialized_end=1201,
+  serialized_start=1224,
+  serialized_end=1258,
 )
 _sym_db.RegisterEnumDescriptor(_TRIGGER_AREA_FILTER_CONFIG_OBJECT_FILTER_TYPE)
 
@@ -118,7 +122,7 @@ _FILTER_CONFIG_OBJECT = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=44,
-  serialized_end=172,
+  serialized_end=191,
 )
 
 
@@ -171,6 +175,13 @@ _INTERPOLATION_CONFIG_OBJECT = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
+    _descriptor.FieldDescriptor(
+      name='min_angle_for_curve_interpol', full_name='Proto.Config.interpolation_config_object.min_angle_for_curve_interpol', index=6,
+      number=7, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
   ],
   extensions=[
   ],
@@ -183,8 +194,8 @@ _INTERPOLATION_CONFIG_OBJECT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=175,
-  serialized_end=380,
+  serialized_start=194,
+  serialized_end=437,
 )
 
 
@@ -214,8 +225,8 @@ _DETECTION_CONFIG_OBJECT_PROXIMITY_CONFIG_OBJECT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=652,
-  serialized_end=706,
+  serialized_start=709,
+  serialized_end=763,
 )
 
 _DETECTION_CONFIG_OBJECT_WEIMANN_CONFIG_OBJECT = _descriptor.Descriptor(
@@ -237,8 +248,8 @@ _DETECTION_CONFIG_OBJECT_WEIMANN_CONFIG_OBJECT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=708,
-  serialized_end=731,
+  serialized_start=765,
+  serialized_end=788,
 )
 
 _DETECTION_CONFIG_OBJECT = _descriptor.Descriptor(
@@ -282,8 +293,8 @@ _DETECTION_CONFIG_OBJECT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=383,
-  serialized_end=783,
+  serialized_start=440,
+  serialized_end=840,
 )
 
 
@@ -306,8 +317,8 @@ _TRIGGER_AREA_FILTER_CONFIG_OBJECT_MAP_FILTER_CONFIG_OBJECT = _descriptor.Descri
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1092,
-  serialized_end=1118,
+  serialized_start=1149,
+  serialized_end=1175,
 )
 
 _TRIGGER_AREA_FILTER_CONFIG_OBJECT_RADIAL_FILTER_CONFIG_OBJECT = _descriptor.Descriptor(
@@ -336,8 +347,8 @@ _TRIGGER_AREA_FILTER_CONFIG_OBJECT_RADIAL_FILTER_CONFIG_OBJECT = _descriptor.Des
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1120,
-  serialized_end=1165,
+  serialized_start=1177,
+  serialized_end=1222,
 )
 
 _TRIGGER_AREA_FILTER_CONFIG_OBJECT = _descriptor.Descriptor(
@@ -381,8 +392,8 @@ _TRIGGER_AREA_FILTER_CONFIG_OBJECT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=786,
-  serialized_end=1201,
+  serialized_start=843,
+  serialized_end=1258,
 )
 
 
@@ -412,8 +423,8 @@ _TRIGGER_AREA_MAP_CONFIG_OBJECT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1203,
-  serialized_end=1307,
+  serialized_start=1260,
+  serialized_end=1364,
 )
 
 
@@ -506,8 +517,8 @@ _PROBE_ENGINE_CONFIG = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1310,
-  serialized_end=1779,
+  serialized_start=1367,
+  serialized_end=1836,
 )
 
 _FILTER_CONFIG_OBJECT.fields_by_name['type'].enum_type = _FILTER_CONFIG_OBJECT_FILTER_TYPE
