@@ -3,7 +3,7 @@
 FROM google/dart-runtime
 
 #install python as the server executs a python script
-RUN apt-get update && apt-get install -y \
+RUN apt-get update && apt-get install -yqq \
   python \
   python-pip
 
